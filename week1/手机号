@@ -1,0 +1,28 @@
+<html>
+<head>
+<script>
+
+function checkPhone(){
+	var phone=document.getElementById("phone").value;
+	if(phone==""){
+		document.getElementById("message").innerHTML ="手机号不能为空";
+	}
+	else if(!(/^1[3456789]\d{9}$/.test(phone))){
+        var msg="手机号码有误，请重填";
+		document.getElementById("message").innerHTML =msg;
+		document.getElementById("phone").focus();
+    } else{
+		document.getElementById("message").innerHTML ="";
+	}
+}
+</script>
+</head>
+<body>
+
+<p>
+请输入手机号:<input type="text" id="phone"  />&nbsp;&nbsp;<input type="button" onclick="checkPhone()" value="确定">
+<span  id="message" style="color:red;"></span>
+
+</p>
+</body>
+</html>
